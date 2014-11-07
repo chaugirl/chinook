@@ -1,0 +1,13 @@
+ACTIVE RECORD QUERY INTERFACE EXERCISES
+1. Count how many tracks belong to the "Hip Hop/Rap" genre
+Genre.where(name: "Hip Hop/Rap").first.tracks.count
+
+2. Find the most expensive Track that has the MediaType "MPEG audio file"
+Track.where(media_type_id: 1).maximum(:unit_price).to_f
+
+3. Find the 2 oldest Artists.
+Artist.order("created_at ASC").limit(2)
+
+4. Find all the Tracks that belong to the 2 most recent Playlist.
+Playlist.order(created_at: :desc).limit(2).map {|p| p.tracks}.flatten
+
