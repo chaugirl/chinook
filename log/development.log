@@ -1,0 +1,11 @@
+  [1m[36mTrack Load (44.7ms)[0m  [1mSELECT "tracks".* FROM "tracks"[0m
+  [1m[35m (1.9ms)[0m  SELECT COUNT(*) FROM "tracks"
+  [1m[36mTrack Load (27.7ms)[0m  [1mSELECT "tracks".* FROM "tracks"[0m
+  [1m[35m (80.8ms)[0m  SELECT MIN("tracks"."unit_price") AS min_id FROM "tracks"
+  [1m[36mGenre Load (34.4ms)[0m  [1mSELECT "genres".* FROM "genres"  WHERE "genres"."name" = 'Electronica/Dance'[0m
+  [1m[35mGenre Load (0.7ms)[0m  SELECT "genres".* FROM "genres"  WHERE "genres"."name" = 'Electronica/Dance'
+  [1m[36m (4.5ms)[0m  [1mSELECT MIN("tracks"."unit_price") AS min_id FROM "tracks"[0m
+  [1m[35mPlaylist Load (54.0ms)[0m  SELECT  "playlists".* FROM "playlists"   ORDER BY "playlists"."created_at" DESC LIMIT 2
+  [1m[36mTrack Load (46.2ms)[0m  [1mSELECT "tracks".* FROM "tracks" INNER JOIN "playlists_tracks" ON "tracks"."id" = "playlists_tracks"."track_id" WHERE "playlists_tracks"."playlist_id" = $1[0m  [["playlist_id", 4]]
+  [1m[35mTrack Load (8.2ms)[0m  SELECT "tracks".* FROM "tracks" INNER JOIN "playlists_tracks" ON "tracks"."id" = "playlists_tracks"."track_id" WHERE "playlists_tracks"."playlist_id" = $1  [["playlist_id", 3]]
+  [1m[36mTrack Load (29.1ms)[0m  [1mSELECT "tracks".* FROM "tracks"[0m

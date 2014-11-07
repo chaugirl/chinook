@@ -1,0 +1,11 @@
+1. Count how many tracks belong to the MediaType "Protected MPEG-4 video file".
+SELECT COUNT(*) FROM tracks WHERE media_type_id = 3;
+
+2. Find the least expensive Track that has the Genre "Electronica/Dance".
+SELECT MIN(unit_price) FROM tracks WHERE genre_id = 15;
+
+3. Find the all the Artists whose names start with A.
+SELECT name FROM artists WHERE name LIKE  'A%';
+
+4. Find all the Tracks that belong to the first Playlist.
+SELECT tracks.name FROM tracks, playlists WHERE playlists.id = 1;
